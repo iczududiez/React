@@ -15,7 +15,7 @@ var SearchUser = React.createClass({
         GitHubService.getReposByUserName(this.refs.username.value).then(function(response){
             this.props.updateRepos(response.data);
         }.bind(this));
-        
+
     },
     render: function(){
         return (
@@ -43,5 +43,10 @@ var SearchUser = React.createClass({
         );
     }
 });
+
+SearchUser.propTypes = {
+    updateUser:React.PropTypes.func.isRequired,
+    updateRepos:React.PropTypes.func.isRequired
+}
 
 module.exports = SearchUser;
